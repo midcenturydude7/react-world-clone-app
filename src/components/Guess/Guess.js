@@ -3,14 +3,13 @@ import React from "react";
 import { range } from "../../utils";
 import { checkGuess } from "../../game-helpers";
 
-function Cell(letter, status) {
+function Cell({ letter, status }) {
   const className = status ? `cell ${status}` : "cell";
   return <span className={className}>{letter}</span>;
 }
 
 function Guess({ value, answer, letter, status }) {
   const result = checkGuess(value, answer);
-  console.log({ result });
 
   return (
     <p className="guess">
